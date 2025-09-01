@@ -2,7 +2,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  background: url(./mario-bg.jpg);
+  background: url(mario-bg.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -47,7 +47,7 @@ h1 {
 
   display: flex;
   flex-wrap: wrap;
-  background: url(./soil.png);
+  background: url(soil.png);
   background-size: cover;
   border: 3px solid white;
   border-radius: 25px;
@@ -58,7 +58,7 @@ h1 {
 #board div {
   width: 180px;
   height: 150px;
-  background: url(./pipe.png);
+  background: url(pipe.png);
   background-size: cover;
   background-position: bottom;
   transition: transform 0.2s ease;
