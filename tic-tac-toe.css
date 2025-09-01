@@ -3,7 +3,7 @@
 body {
   font: normal 16px "Cinzel Decorative", serif;
   text-align: center;
-  background: url("/Portfolio-project/Portfolio/images/hogwards-night.jpg")
+  background: url("hogwards-night.jpg")
     no-repeat center center fixed;
   background-size: cover;
   color: #f5f5dc; /* parchment text */
@@ -279,3 +279,4 @@ select option {
     font-size: 19px;
   }
 }
+
