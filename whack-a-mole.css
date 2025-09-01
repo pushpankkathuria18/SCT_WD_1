@@ -2,102 +2,84 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  background: url(mario-bg.jpg);
+  background: url(./mario-bg.jpg) no-repeat center center fixed;
   background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
   margin: 0;
   padding: 0;
   cursor: none;
+  overflow-x: hidden; /* Prevent horizontal scrollbars */
+  overflow-y: hidden; /* Prevent vertical scrollbars */
 }
 
-/* h1: Dark Red for contrast with the yellow background */
+/* Title */
 h1 {
   font-size: 2rem;
-  color: #8b0000; /* Dark Red */
+  color: #8b0000;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
   font-weight: bold;
   letter-spacing: 2px;
-  display: inline-block;
   margin: 10px 0;
 }
 
+/* Score Box */
 #score {
-  position: absolute; /* Positioning it absolutely */
-  top: 0; /* Distance from the top */
-  right: 20px; /* Distance from the right */
-  font-size: 1.8rem;
-  color: #fff; /* White color for better visibility */
+  font-size: 1.5rem;
+  color: #fff;
   font-weight: bold;
-  background: rgba(
-    0,
-    0,
-    0,
-    0.7
-  ); /* Semi-transparent black for game-like feel */
-  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 8px 15px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  margin-bottom: 10px;
 }
 
-/* Game Board */
+/* Game Board (default for desktops/laptops ≥1025px) */
 #board {
   width: 540px;
   height: 450px;
-
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  background: url(soil.png);
+  background: url(./soil.png);
   background-size: cover;
   border: 3px solid white;
   border-radius: 25px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.6);
 }
 
-/* Individual Tiles */
+/* Tiles */
 #board div {
   width: 180px;
   height: 150px;
-  background: url(pipe.png);
+  background: url(./pipe.png);
   background-size: cover;
   background-position: bottom;
   transition: transform 0.2s ease;
 }
 
-/* Images Inside Tiles */
+/* Mole & Plant */
 #board div img {
   width: 90px;
   height: 70px;
   user-select: none;
-  -moz-user-select: none;
   -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
 }
-/* Centering the game board and buttons */
+
+/* Game Container */
 .game-container {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content horizontally */
+  align-items: center;
   justify-content: center;
-  /* height: 100vh; */
 }
 
-/* Centering the buttons */
-.button-container {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-
-  /* margin-top: 20px; */
-}
-
-/* Button Styles */
+/* Buttons */
 button {
   border: none;
   color: white;
-  padding: 15px 30px;
+  padding: 2px;
   text-align: center;
-  text-decoration: none;
   font-size: 16px;
   cursor: pointer;
   border-radius: 8px;
@@ -105,45 +87,143 @@ button {
   font-weight: bold;
 }
 
-/* Start Game Button - Red */
+/* Start Game Button */
 #startGameBtn {
-  background-color: #4caf50; /* Red */
+  background-color: #4caf50;
 }
-
 #startGameBtn:hover {
-  background-color: #388e3c; /* Darker red on hover */
+  background-color: #388e3c;
 }
 
-/* New Game Button - Green */
+/* New Game Button */
 #newGameBtn {
-  background-color: #d32f2f; /* Green */
+  background-color: #d32f2f;
 }
-
 #newGameBtn:hover {
-  background-color: #b71c1c; /* Darker green on hover */
+  background-color: #b71c1c;
 }
 
-/* Ensure both buttons have the same size */
+/* Same size for both buttons */
 #startGameBtn,
 #newGameBtn {
   width: 200px;
   height: 50px;
   font-size: 18px;
-  font-weight: bold;
   margin-top: 15px;
 }
-
-/* Hide "New Game" button at the start */
 #newGameBtn {
   display: none;
 }
 
-/* Style for the hammer */
+/* Hammer */
 #hammer {
   position: absolute;
-  width: 90px; /* Adjust hammer size */
+  width: 80px;
   height: auto;
-  pointer-events: none; /* Prevent hammer from interfering with clicks */
-  transform: rotate(-30deg); /* Slight angle for effect */
-  transition: transform 0.1s ease; /* Smooth hammer movement */
+  pointer-events: none;
+  transform: rotate(-30deg);
+  transition: transform 0.1s ease;
+  z-index: 9999;
+}
+
+/* =====================
+   RESPONSIVE QUERIES
+===================== */
+
+/* Tablets (768px–1024px) */
+
+@media (min-width: 1024px) {
+  #score {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+@media (max-width: 1024px) and (min-width: 768px) {
+  #board {
+    width: 480px;
+    height: 400px;
+  }
+  #board div {
+    width: 160px;
+    height: 133px;
+  }
+  #board div img {
+    width: 75px;
+    height: 60px;
+  }
+  #hammer {
+    width: 65px;
+  }
+  #score {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    padding: 8px 14px;
+  }
+  #startGameBtn,
+  #newGameBtn {
+    width: 160px;
+    height: 45px;
+    font-size: 18px;
+  }
+}
+
+/* Mobiles (<768px) */
+@media (max-width: 767px) {
+  #board {
+    width: 450px;
+    height: 385px;
+    margin: 5px;
+  }
+  #board div {
+    width: 130px;
+    height: 112px;
+  }
+  #board div img {
+    width: 115px;
+    height: 65px;
+  }
+  #hammer {
+    width: 50px;
+  }
+  #score {
+    font-size: 1.1rem;
+    padding: 8px 16px;
+    margin-top: 10px;
+  }
+  #startGameBtn,
+  #newGameBtn {
+    width: 140px;
+    height: 45px;
+    font-size: 16px;
+  }
+}
+
+/* Small Phones (<330px) */
+@media (max-width: 450px) {
+  #board {
+    width: 270px;
+    height: 225px;
+  }
+  #board div {
+    width: 90px;
+    height: 75px;
+  }
+  #board div img {
+    width: 45px;
+    height: 36px;
+  }
+  #hammer {
+    width: 40px;
+  }
+  #score {
+    font-size: 1rem;
+    padding: 5px 10px;
+  }
+  #startGameBtn,
+  #newGameBtn {
+    width: 140px;
+    height: 40px;
+    font-size: 14px;
+  }
 }
