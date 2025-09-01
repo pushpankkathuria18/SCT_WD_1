@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="cal.css" />
+  </head>
+  <body>
+    <main class="calculator-container">
+      <header class="calculator-header">
+        <span class="calculator-title">Calculator</span>
+        <div class="calculator-controls">
+          <button id="mode-toggle">Scientific</button>
+          <div class="angle-toggle">
+            <button id="angle-deg" class="active">DEG</button>
+            <button id="angle-rad">RAD</button>
+          </div>
+        </div>
+      </header>
+
+      <!-- ✅ Single display now -->
+      <section class="display-screen">
+        <div id="result-display" class="result-text">0</div>
+      </section>
+
+      <section class="keypad-grid" id="keypad"></section>
+    </main>
+    <script src="cal.js"></script>
+  </body>
+</html>

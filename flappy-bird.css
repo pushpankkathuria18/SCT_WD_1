@@ -1,0 +1,31 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  overflow: hidden;
+  margin-top: 0;
+
+  background: linear-gradient(to bottom, skyblue 50%, lightgreen);
+}
+
+#board {
+  background-image: url("./flappybirdbg.png");
+}
+
+#newGameBtn {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: none; /* Initially hidden */
+}
+
+#newGameBtn:hover {
+  background-color: #e64a19;
+}

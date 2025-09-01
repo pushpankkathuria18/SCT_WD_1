@@ -1,0 +1,710 @@
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  cursor: url("images/HP-wand.png"), auto;
+  font-family: "MedievalSharp", serif;
+}
+
+a {
+  text-decoration: none;
+  color: #d4af37;
+}
+
+.container {
+  /* background-color: #161e28; */
+  background: linear-gradient(
+      rgba(10, 10, 30, 0.6),
+      /* lighter top overlay */ rgba(0, 0, 0, 0.7) /* softer bottom overlay */
+    ),
+    url("https://i.pinimg.com/1200x/6d/4f/18/6d4f1833405937d25fd0358d40f6be4b.jpg")
+      no-repeat center center/cover;
+
+  color: #f5f5f5; /* slightly off-white, easier on eyes */
+  width: 100%;
+}
+
+/* header-section starts  */
+
+.head {
+  /* width: 58.1%; */
+  width: 100%;
+  background-color: #344555;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding-right: 30px;
+}
+
+#logo {
+  height: 80px;
+  width: 100px;
+}
+
+/* ====== Hamburger Menu ====== */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #d4af37;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Show hamburger only on small screens */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: inline-block;
+  }
+
+  #navbar {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #344555;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+    border-top: 2px solid #d4af37;
+  }
+
+  #navbar ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #navbar.show {
+    display: flex;
+  }
+
+  .info {
+    align-items: center;
+    padding-right: 0;
+    text-align: center;
+  }
+}
+
+#name {
+  font-size: 30px;
+  color: burlywood;
+}
+
+#profession {
+  font-size: 14px;
+  position: relative;
+  top: 2px;
+  color: white;
+}
+
+/* navbar starts*/
+#navbar {
+  display: flex;
+  width: 300px;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 1; /* makes it take available space between logo & info */
+}
+
+#navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 70px;
+}
+
+#navbar li a {
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#navbar li a:hover {
+  color: rgb(196, 114, 8);
+}
+
+/* navbar ends*/
+
+/* header section ends  */
+
+/* main content starts  */
+
+.content {
+  width: 100%;
+  margin-top: 84px; /*exactly navbar height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .hero-img-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#hero-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: top;
+} */
+
+/* about-section starts*/
+
+#about {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 80%;
+  height: 450px;
+  border: 2px solid rgba(255, 255, 255, 0.438);
+  border-radius: 10px;
+  /* Magical clean vibe */
+  /* background: rgba(20, 20, 30, 0.7);  */
+  border: 1px solid rgba(212, 175, 55, 0.5); /* Golden subtle border */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(75, 0, 130, 0.6), 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+#about h3 {
+  width: 100%;
+  font-size: 35px;
+  max-width: 380px;
+  line-height: 1.3;
+}
+
+.about-content {
+  display: flex;
+  padding-top: 20px;
+  color: aliceblue;
+  justify-content: space-around;
+  align-items: center;
+  gap: 60px;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+}
+
+#about-para {
+  width: 100%;
+  max-width: 380px;
+  padding: 15px 0px;
+  font-family: "Cinzel", serif;
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+#paras-img {
+  width: 100%;
+  max-width: 300px;
+  border: 2px solid rgba(19, 4, 4, 0.4);
+  border-radius: 40%;
+}
+
+/* Resume Button - Magical Harry Potter vibe */
+.resume-btn {
+  width: 100%;
+  max-width: 120px;
+  padding: 12px 0px;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Cinzel Decorative", serif;
+  color: #f5f5dc;
+  text-decoration: none;
+  background: linear-gradient(135deg, #2c1a0f, #1b1b1b);
+  border: 2px solid #d4af37ce;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.6), 0 0 20px rgba(75, 0, 130, 0.4);
+  transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+  color: #ffda77;
+  background: linear-gradient(135deg, #3b2a1a, #000);
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.8), 0 0 18px rgba(75, 0, 130, 0.6);
+}
+
+.about-icon {
+  width: 100%;
+  max-width: 22px;
+}
+
+.icon-container {
+  display: flex;
+  padding-top: 20px;
+  gap: 20px;
+}
+
+/* about-section ends*/
+
+/* projects starts*/
+
+#featured-text {
+  padding: 40px 0;
+  color: rgb(255, 255, 255);
+}
+
+.work-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-rows: repeat(2, 1fr);
+  gap: 40px;
+  width: 80%;
+  padding: 30px;
+  margin: auto;
+  background: rgba(20, 20, 30, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.5); /* Golden subtle border */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(75, 0, 130, 0.6), 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.work-container a {
+  transition: color 0.3s;
+  font-size: 22px;
+}
+
+.work-container a:hover {
+  color: rgb(196, 114, 8);
+}
+
+#work-img-one,
+#work-img-two,
+#work-img-three,
+#work-img-four,
+#work-img-five,
+#work-img-six {
+  width: 100%;
+  max-width: 300px;
+  height: 370px;
+  /* object-fit: cover; */
+  border-radius: 8px;
+  padding-bottom: 5px;
+}
+
+.flappy-bird-container,
+.rock-game-container,
+.mole-game-container,
+.tic-tac-toe-container,
+.calculator-container,
+.to-do-container {
+  text-align: center;
+  width: 100%;
+}
+
+/* projects ends*/
+
+/* main-content-ends  */
+
+/* Wand css starts */
+
+.glow {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, rgb(255, 179, 0), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: fadeOut 0.4s ease-out forwards;
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+/* Wand css ends  */
+
+/* ---------------- CONTACT SECTION ---------------- */
+
+.section-contact {
+  padding-bottom: 50px;
+}
+
+.section-contact h3.section-title {
+  color: white;
+  text-align: center;
+  font-size: 1.7rem;
+  padding-top: 40px;
+}
+/* === CONTACT SECTION === */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* Dark magical parchment look */
+  background: rgba(15, 15, 25, 0.85);
+  backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(212, 175, 55, 0.4); /* subtle golden frame */
+  border-radius: 16px;
+
+  padding: 35px 25px;
+  width: 100%;
+  max-width: 280px;
+
+  /* Clean subtle glow */
+  box-shadow: 0 0 10px rgba(75, 0, 130, 0.3), 0 0 18px rgba(212, 175, 55, 0.25);
+
+  color: #f5f5f5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.6), 0 0 28px rgba(75, 0, 130, 0.5);
+}
+
+.contact-icon {
+  height: 55px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 6px #d4af37);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.contact-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #d4af37; /* Golden accent */
+  letter-spacing: 1px;
+}
+
+.contact-info {
+  text-align: center;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #e0e0e0;
+  transition: color 0.3s ease;
+}
+
+.contact-info:hover {
+  color: #f0d06c; /* warm golden on hover */
+}
+
+/* ---------------- FOOTER SECTION ---------------- */
+
+.footer {
+  /* background-color: #344555; */
+  backdrop-filter: blur(4px);
+  padding: 50px 0;
+  width: 100%;
+  background-color: transparent; /* let bg show through */
+  border-top: 2px solid #f5f5f570; /* magical border */
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.footer-brand,
+.footer-links,
+.footer-social {
+  text-align: center;
+  color: white;
+}
+
+.footer-links h4,
+.footer-social h4 {
+  padding-bottom: 10px;
+  color: burlywood;
+}
+
+.footer-links a,
+.footer-social a {
+  text-decoration: none;
+  color: white;
+  margin: 0 8px;
+  transition: color 0.3s;
+  font-size: 17px;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+  color: #d4af37;
+}
+
+.footer-social i {
+  font-size: 25px;
+  margin: 0 5px;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 14px;
+  color: burlywood; /* Golden text for Harry Potter vibe */
+  font-family: "Georgia", serif; /* Classic magical font */
+}
+
+/* ================== RESPONSIVE DESIGN ================== */
+
+/* Phones (≤ 576px) */
+@media (max-width: 576px) {
+  .head {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px 12px;
+  }
+
+  #logo {
+    width: 70px;
+    height: auto;
+  }
+
+  .info {
+    align-items: center;
+    padding: 0;
+    text-align: center;
+  }
+
+  #name {
+    font-size: 20px;
+    line-height: 1.1;
+  }
+
+  #profession {
+    font-size: 11px;
+  }
+
+  /* Navbar dropdown */
+  #navbar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #344555;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 12px 0;
+  }
+
+  #navbar ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #navbar.show {
+    display: flex;
+  }
+
+  /* About section stacks vertically */
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 8px;
+  }
+
+  #about {
+    height: 100%;
+  }
+
+  #about h3 {
+    font-size: 20px;
+  }
+
+  #about-para {
+    font-size: 16px;
+  }
+
+  .resume-btn {
+    font-size: 14px;
+    padding: 8px;
+    max-width: 100px;
+  }
+
+  #paras-img {
+    display: none;
+  }
+
+  /* Project grid -> 1 column */
+  .work-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 15px;
+  }
+
+  .game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Contact cards stack */
+  .contact-cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .footer-grid {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Tablets (577px – 991px) */
+/* Tablets (577px – 991px) */
+@media (min-width: 577px) and (max-width: 991px) {
+  #name {
+    font-size: 26px;
+  }
+
+  .info {
+    padding-right: 30px;
+  }
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  #paras-img {
+    display: none;
+  }
+
+  /* Projects -> 2 columns */
+  .work-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    /* width: 90%; */
+  }
+
+  .game {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-grid {
+    gap: 20px;
+  }
+  .footer-grid a {
+    font-size: 16px;
+  }
+
+  /* 🔥 Fix: between 577–768, keep mobile behaviour (hidden until toggled) */
+  @media (max-width: 768px) {
+    #navbar {
+      display: none; /* hidden by default */
+    }
+    #navbar.show {
+      display: flex; /* only when toggled */
+    }
+  }
+
+  /* 🔥 Fix: from 769px upward, always show nav normally */
+  @media (min-width: 769px) {
+    .menu-toggle {
+      display: none; /* hide hamburger */
+    }
+    #navbar {
+      display: flex !important;
+      position: static;
+      flex-direction: row;
+      justify-content: center;
+      background: none;
+      width: auto;
+      padding: 0;
+    }
+    .about-content {
+      flex-direction: row;
+      padding: 15px;
+      overflow: hidden;
+    }
+    #about h3,
+    #about span {
+      font-size: 28px;
+      text-align: left;
+    }
+    #paras-img {
+      display: block;
+    }
+  }
+}
+
+/* Small laptops (992px – 1200px) */
+@media (min-width: 992px) and (max-width: 1200px) {
+  #about h3 {
+    font-size: 30px;
+  }
+
+  #profession {
+    font-size: medium;
+  }
+
+  #about-para {
+    font-size: 18px;
+  }
+
+  .work-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+/* Large desktops (≥ 1600px) */
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+  .work-container {
+    max-width: 1400px;
+    margin: auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .about-content {
+    gap: 100px;
+  }
+
+  #name {
+    font-size: 48px;
+  }
+}

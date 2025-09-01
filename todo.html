@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="todo.css" />
+  </head>
+  <body>
+    <!-- Date & Time -->
+    <div id="datetime-display"></div>
+
+    <!-- Background Video -->
+    <video id="bg-video" autoplay muted loop playsinline>
+      <source
+        src="/Portfolio-project/Portfolio/images/calm-sea.mp4"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- To-Do App -->
+    <div class="todo-wrapper">
+      <div class="task-summary">
+        <div class="progress-circle">
+          <svg>
+            <circle cx="50" cy="50" r="45"></circle>
+            <circle id="progress-ring" cx="50" cy="50" r="45"></circle>
+          </svg>
+          <span id="progress-value">0%</span>
+        </div>
+        <div id="progress-status">No tasks yet</div>
+      </div>
+
+      <h1>My To-Do List</h1>
+
+      <!-- Input -->
+      <div class="task-input">
+        <input
+          type="text"
+          id="task-field"
+          placeholder="Add a new task..."
+          maxlength="150"
+        />
+        <button id="task-add-btn">Add</button>
+      </div>
+
+      <!-- Task List -->
+      <ul id="task-list"></ul>
+    </div>
+
+    <!-- Template for task -->
+    <template id="task-template">
+      <li class="task-item">
+        <div class="task-left">
+          <input type="checkbox" class="task-check" />
+          <span class="task-text"></span>
+        </div>
+        <div class="task-actions">
+          <button class="edit-btn">✏️</button>
+          <button class="delete-btn">✖</button>
+        </div>
+      </li>
+    </template>
+
+    <script src="todo.js"></script>
+  </body>
+</html>

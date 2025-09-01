@@ -1,0 +1,242 @@
+/* ===== BACKGROUND ===== */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+  filter: saturate(1.2) contrast(1.05) brightness(1.05);
+}
+#bg-video::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.7)
+  );
+  z-index: -1;
+}
+
+/* ===== DATE & TIME ===== */
+#datetime-display {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #e0eaff;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 6px 14px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(64, 144, 255, 0.6);
+  z-index: 10;
+}
+
+/* ===== BODY ===== */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  padding: 10px;
+  background: #0f192d;
+}
+
+/* ===== WRAPPER ===== */
+.todo-wrapper {
+  background: rgba(15, 25, 45, 0.45);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px) saturate(180%);
+  border-radius: 30px;
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  color: white;
+  box-shadow: 0 0 60px 20px rgba(0, 200, 255, 0.25);
+}
+
+/* ===== PROGRESS ===== */
+.task-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.progress-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.progress-circle svg {
+  width: 100px;
+  height: 100px;
+  transform: rotate(-90deg);
+}
+.progress-circle circle {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+.progress-circle circle:first-child {
+  stroke: rgba(255, 255, 255, 0.1);
+}
+#progress-ring {
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  stroke: #4facfe;
+  transition: stroke-dashoffset 0.4s ease;
+}
+#progress-value {
+  position: absolute;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #a9d3ff;
+}
+#progress-status {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #a9d3ff;
+}
+
+/* ===== INPUT ===== */
+.task-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.task-input input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+.task-input input:focus {
+  background: rgba(255, 255, 255, 0.25);
+}
+.task-input input::placeholder {
+  color: #c7d6ec;
+}
+button {
+  background: linear-gradient(135deg, #407cff, #1b2da1);
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+button:hover {
+  box-shadow: 0 0 25px #5a9dff;
+  transform: scale(1.05);
+}
+
+/* ===== TASKS ===== */
+#task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.task-check {
+  transform: scale(1.3);
+  accent-color: #4090ff;
+}
+.task-actions button {
+  margin-left: 8px;
+  background: transparent;
+  font-size: 18px;
+}
+.task-text.conquered {
+  text-decoration: line-through;
+  color: #7eff7e;
+  opacity: 0.7;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 1200px) {
+  .todo-wrapper {
+    padding: 20px;
+    border-radius: 20px;
+  }
+  #datetime-display {
+    font-size: 22px;
+    padding: 5 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .todo-wrapper {
+    padding: 20px;
+    border-radius: 20px;
+  }
+  #datetime-display {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+}
+@media (max-width: 600px) {
+  .todo-wrapper {
+    padding: 18px;
+    border-radius: 18px;
+  }
+  .task-input input {
+    font-size: 14px;
+    padding: 10px;
+  }
+  button {
+    padding: 8px 16px;
+  }
+  #datetime-display {
+    font-size: 14px;
+    padding: 4px 8px;
+    top: 10px;
+    right: 10px;
+  }
+}
+@media (max-width: 400px) {
+  body {
+    padding: 5px;
+  }
+  .todo-wrapper {
+    padding: 15px;
+    font-size: 10px;
+    width: 80%;
+  }
+
+  #datetime-display {
+    font-size: 12px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .task-text {
+    font-size: 12px;
+  }
+}

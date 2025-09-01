@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+body {
+  background: linear-gradient(to right, #f5799c, #d3a4e8, #77a5fc);
+  font-family: "Sigmar", serif;
+  font-style: normal;
+}
+
+#heading {
+  padding-top: 10px;
+  height: 50px;
+  width: 100%;
+  color: white;
+  line-height: 50px; /*to vertically center the text*/
+  font-size: 3rem;
+  font-family: "Sigmar", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem; /*1rem = 16px */
+  gap: 35px;
+}
+
+.choice {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.choice img:hover {
+  cursor: pointer;
+  transform: scale(1.15);
+}
+
+img {
+  height: 130px;
+  width: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: 0.2s ease-in-out;
+}
+
+.score-board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  margin-top: 2rem;
+  gap: 5rem;
+  color: white;
+}
+
+#user-score,
+#comp-score {
+  font-size: 3rem;
+}
+
+#msg {
+  margin-top: 2rem;
+  background-color: #081b31;
+  color: white;
+  font-size: 1.3rem;
+  display: inline-block;
+  padding: 0.7rem;
+  border-radius: 1rem;
+  cursor: default;
+}
+
+#new-game {
+  margin-top: 1.5rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.97rem;
+  font-family: "Sigmar", serif;
+  font-style: normal;
+}
+
+#new-game:hover {
+  opacity: 0.7;
+}

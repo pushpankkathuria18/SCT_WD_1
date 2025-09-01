@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stone, Paper & Scissors</title>
+    <link rel="stylesheet" href="Stone, Paper & Scissors.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h2 id="heading">Rock Paper Scissors</h2>
+    <main>
+      <div class="choices">
+        <div class="choice" id="rock">
+          <img src="rock.png" alt="rock" />
+        </div>
+        <div class="choice" id="paper">
+          <img src="paper.png" alt="paper" />
+        </div>
+        <div class="choice" id="scissors">
+          <img src="scissors.png" alt="scissors" />
+        </div>
+      </div>
+
+      <div class="score-board">
+        <div class="score">
+          <p id="user-score">0</p>
+          <p>You</p>
+        </div>
+        <div class="score">
+          <p id="comp-score">0</p>
+          <p>Comp</p>
+        </div>
+      </div>
+
+      <div class="msg-container">
+        <p id="msg">Play your move</p>
+      </div>
+      <button id="new-game">New Game</button>
+    </main>
+
+    <script src="Stone, Paper & Scissors.js"></script>
+  </body>
+</html>

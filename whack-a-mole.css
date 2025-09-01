@@ -1,0 +1,149 @@
+/* General Styles */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background: url(./mario-bg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  cursor: none;
+}
+
+/* h1: Dark Red for contrast with the yellow background */
+h1 {
+  font-size: 2rem;
+  color: #8b0000; /* Dark Red */
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+  letter-spacing: 2px;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+#score {
+  position: absolute; /* Positioning it absolutely */
+  top: 0; /* Distance from the top */
+  right: 20px; /* Distance from the right */
+  font-size: 1.8rem;
+  color: #fff; /* White color for better visibility */
+  font-weight: bold;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Semi-transparent black for game-like feel */
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Game Board */
+#board {
+  width: 540px;
+  height: 450px;
+
+  display: flex;
+  flex-wrap: wrap;
+  background: url(./soil.png);
+  background-size: cover;
+  border: 3px solid white;
+  border-radius: 25px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Individual Tiles */
+#board div {
+  width: 180px;
+  height: 150px;
+  background: url(./pipe.png);
+  background-size: cover;
+  background-position: bottom;
+  transition: transform 0.2s ease;
+}
+
+/* Images Inside Tiles */
+#board div img {
+  width: 90px;
+  height: 70px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+/* Centering the game board and buttons */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center;
+  /* height: 100vh; */
+}
+
+/* Centering the buttons */
+.button-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+
+  /* margin-top: 20px; */
+}
+
+/* Button Styles */
+button {
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+/* Start Game Button - Red */
+#startGameBtn {
+  background-color: #4caf50; /* Red */
+}
+
+#startGameBtn:hover {
+  background-color: #388e3c; /* Darker red on hover */
+}
+
+/* New Game Button - Green */
+#newGameBtn {
+  background-color: #d32f2f; /* Green */
+}
+
+#newGameBtn:hover {
+  background-color: #b71c1c; /* Darker green on hover */
+}
+
+/* Ensure both buttons have the same size */
+#startGameBtn,
+#newGameBtn {
+  width: 200px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* Hide "New Game" button at the start */
+#newGameBtn {
+  display: none;
+}
+
+/* Style for the hammer */
+#hammer {
+  position: absolute;
+  width: 90px; /* Adjust hammer size */
+  height: auto;
+  pointer-events: none; /* Prevent hammer from interfering with clicks */
+  transform: rotate(-30deg); /* Slight angle for effect */
+  transition: transform 0.1s ease; /* Smooth hammer movement */
+}

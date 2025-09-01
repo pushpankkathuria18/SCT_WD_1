@@ -1,0 +1,140 @@
+/* ===== THEME VARIABLES ===== */
+:root {
+  --bg-main: #0b0d12;
+  --bg-calc: #feefe546;
+  --bg-bar: #9eb1c0;
+  --bg-keys: #7f83a0;
+  --color-text: #ffffff;
+  --color-subtext: #573891;
+  --color-op: #b8cffb;
+  --color-fn: #9be4b1;
+  --radius: 18px;
+  --gap: 6px;
+}
+
+/* ===== BASE ===== */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: url("https://i.pinimg.com/1200x/aa/39/d7/aa39d7d870faaf7ad834ceb7eac096c1.jpg")
+    no-repeat;
+  background-size: cover;
+  color: var(--color-text);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* ===== CALCULATOR ===== */
+.calculator-container {
+  background: var(--bg-calc);
+  border-radius: var(--radius);
+  overflow: hidden;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* ===== HEADER ===== */
+.calculator-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--bg-bar);
+  color: var(--color-subtext);
+}
+
+.calculator-controls {
+  display: flex;
+  gap: var(--gap);
+}
+
+.angle-toggle button,
+#mode-toggle {
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  color: var(--color-subtext);
+  border-radius: 999px;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+.angle-toggle button:hover,
+#mode-toggle:hover {
+  background: rgba(243, 23, 23, 0.1);
+  transform: scale(1.05);
+}
+
+.angle-toggle .active {
+  background: #7aa2ff;
+  color: #000;
+}
+
+/* ===== DISPLAY ===== */
+.display-screen {
+  padding: 15px 20px 0px 20px;
+  min-height: 100px;
+}
+
+.expression-text {
+  font-size: 25px;
+  color: var(--color-subtext);
+  min-height: 34px;
+}
+
+.result-text {
+  font-size: 32px;
+  font-weight: bold;
+  color: #31739c;
+}
+
+/* ===== KEYPAD ===== */
+.keypad-grid {
+  display: grid;
+  gap: var(--gap);
+  padding: 8px;
+  background: var(--bg-keys);
+}
+
+.keypad-grid button {
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  background: rgba(15, 24, 38, 0.9);
+  color: inherit;
+  border: 1px solid #172033;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.keypad-grid button:hover {
+  background-color: #1e2b42;
+  transform: scale(1.05);
+}
+
+.keypad-grid button:active {
+  transform: scale(0.97);
+}
+
+.op {
+  color: var(--color-op);
+}
+.fn {
+  color: var(--color-fn);
+}
+.danger {
+  color: var(--color-danger);
+}
+
+.equals {
+  background: var(--btn-equals);
+  border-color: var(--btn-equals);
+}
+
+.equals:hover {
+  background: #3d8a63;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="tic-tac-toe.css" />
+
+    <title>Tic Tac Toe Game</title>
+  </head>
+
+  <body>
+    <table id="scoreboard" align="center">
+      <tr>
+        <td>Player 1</td>
+        <td width="30">&nbsp;</td>
+        <td>Player 2</td>
+      </tr>
+      <tr>
+        <td class="score" id="player1">0</td>
+        <td>&nbsp;</td>
+        <td class="score" id="player2">0</td>
+      </tr>
+    </table>
+
+    <div class="game-wrapper">
+      <div id="placeholder"></div>
+      <div class="controls">
+        <select onchange="restart(this.value)">
+          <option value="2">2 X 2</option>
+          <option value="3" selected>3 X 3</option>
+          <option value="4">4 X 4</option>
+          <option value="5">5 X 5</option>
+        </select>
+        <button onclick="restart()">Reset</button>
+      </div>
+    </div>
+
+    <script src="tic-tac-toe.js"></script>
+  </body>
+</html>
