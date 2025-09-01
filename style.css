@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  cursor: url("images/HP-wand.png"), auto;
+  cursor: url("HP-wand.png"), auto;
   font-family: "MedievalSharp", serif;
 }
 
@@ -157,21 +157,6 @@ a {
   flex-direction: column;
   align-items: center;
 }
-
-/* .hero-img-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-#hero-img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  object-position: top;
-} */
-
-/* about-section starts*/
 
 #about {
   margin-top: 30px;
@@ -708,3 +693,4 @@ a {
     font-size: 48px;
   }
 }
+
