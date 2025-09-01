@@ -52,6 +52,7 @@ h1 {
 #board div {
   width: 180px;
   height: 150px;
+  cursor:pointer;
   background: url(./pipe.png);
   background-size: cover;
   background-position: bottom;
@@ -228,5 +229,6 @@ button {
     font-size: 14px;
   }
 }
+
 
 
