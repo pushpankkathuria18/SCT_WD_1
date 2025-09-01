@@ -131,7 +131,7 @@ function resetGame() {
 
 // Create hammer element
 let hammer = document.createElement("img");
-hammer.src = "./hammer.jpg"; // Ensure hammer.png is in the same directory
+// hammer.src = "./hammer.jpg"; // Ensure hammer.png is in the same directory
 hammer.id = "hammer";
 hammer.style.position = "absolute";
 hammer.style.width = "90px"; // Adjust size as needed
@@ -169,3 +169,4 @@ document.addEventListener("mousedown", () => {
 document.addEventListener("mouseup", () => {
   hammer.style.transform = "rotate(-40deg) scale(1)"; // Reset position
 });
+
