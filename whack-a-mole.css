@@ -52,7 +52,7 @@ h1 {
 #board div {
   width: 180px;
   height: 150px;
-  cursor:pointer;
+  
   background: url(./pipe.png);
   background-size: cover;
   background-position: bottom;
@@ -62,6 +62,7 @@ h1 {
 /* Mole & Plant */
 #board div img {
   width: 90px;
+  cursor:pointer;
   height: 70px;
   user-select: none;
   -webkit-user-drag: none;
@@ -229,6 +230,7 @@ button {
     font-size: 14px;
   }
 }
+
 
 
 
